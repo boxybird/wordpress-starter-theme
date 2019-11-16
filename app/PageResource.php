@@ -13,13 +13,13 @@ class PageResource extends Resource
     {
         return array_map(function ($post) {
             return [
-                'id'             => $post->ID,
-                'title'          => get_the_title($post->ID),
-                'content'        => get_the_content(null, false, $post->ID),
-                'link'           => get_the_permalink($post->ID),
-                'excerpt'        => wp_trim_words(get_the_excerpt($post->ID), 25),
-                'excerpt_long'   => wp_trim_words(get_the_excerpt($post->ID), 50),
-                'image'          => [
+                'id'           => $post->ID,
+                'title'        => get_the_title($post->ID),
+                'content'      => get_the_content(null, false, $post->ID),
+                'link'         => get_the_permalink($post->ID),
+                'excerpt'      => wp_trim_words(get_the_excerpt($post->ID), 25),
+                'excerpt_long' => wp_trim_words(get_the_excerpt($post->ID), 50),
+                'image'        => [
                     'sizes' => [
                         'full' => get_the_post_thumbnail_url($post->ID),
                     ],
