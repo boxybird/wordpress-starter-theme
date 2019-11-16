@@ -1,9 +1,7 @@
 {% extends "layouts/base.twig" %}
 
 {% block content %}
-    {% for page in bb_wp_loop() %}
-        <h1>Page: {{ get_the_title() }}</h1>
-        <h2>Post ID: {{ get_the_ID() }}</h2>
-        <p>{{ get_the_content()|raw }}</p>
-    {% endfor %}
+    <h1>Page: {{ page.title }}</h1>
+    <h2>Post ID: {{ page.id }}</h2>
+    {{ page.content|raw }}
 {% endblock %}

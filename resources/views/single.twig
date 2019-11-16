@@ -4,5 +4,5 @@
     <h1>{{ post.title }}</h1>
     <h2>Post ID: {{ post.id }}</h2>
     <h2>Bundled ACF (eg 'bb_favorite_color'): {{ post.favorite_color }}</h2>
-    <p>{{ post.content|raw }}</p>
+    {{ post.content|raw }}
 {% endblock %}
