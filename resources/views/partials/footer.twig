@@ -1,0 +1,17 @@
+{% set footer_menu = get_menu_items_by_registered_slug('footer_menu') %}
+
+<footer class="container flex justify-between mx-auto py-4">
+    <div>
+        {% if footer_menu is not empty %}
+            <nav>
+                <ul class="flex items-center justify-center">
+                    {% for item in footer_menu %}
+                        <li class="{{ loop.last ? '' : 'mr-2' }}">
+                            <a href="{{ item.url }}">{{ item.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        {% endif %}
+    </div>
+</footer>

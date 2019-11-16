@@ -1,0 +1,19 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+    <p class="italic text-gray-600 text-xs">Global $wp_query</p>
+    {% for post in posts %}
+        <a href="{{ post.link }}">
+            <h1>{{ post.title }}</h1>
+        </a>
+        <h2>Post ID: {{ post.id }}</h2>
+    {% endfor %}
+    <hr>
+    <p class="italic text-gray-600 text-xs">Custom WP_Query</p>
+    {% for post in custom_posts %}
+        <a href="{{ post.link }}">
+            <h1>{{ post.title }}</h1>
+        </a>
+        <h2>Post ID: {{ post.id }}</h2>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{
+	"name": "boxybird/theme",
+	"description": "A BoxyBird Starter Theme",
+	"require": {
+		"twig/twig": "^2.0"
+	},
+	"require-dev": {
+		"rdehnhardt/var-dumper": "^1.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"BoxyBird\\App\\": "./app"
+		},
+		"files": [
+			"app/helpers.php"
+		]
+	}
+}

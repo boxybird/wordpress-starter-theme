@@ -1,0 +1,1 @@
+<?php // Extended by Twig rather than default WP

@@ -1,0 +1,18 @@
+<header class="container flex justify-between mx-auto py-4">
+    <div class="font-bold font-primary">
+        <span>{{ get_bloginfo('name') }}</span>
+    </div>
+    <div>
+        {% if menu.primary is not empty %}
+            <nav>
+                <ul class="flex items-center justify-center">
+                    {% for item in menu.primary %}
+                        <li class="{{ loop.last ? '' : 'mr-2' }}">
+                            <a href="{{ item.url }}">{{ item.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        {% endif %}
+    </div>
+</header>
