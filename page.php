@@ -1,7 +1,8 @@
 <?php
 
+use BoxyBird\App\Twig;
 use BoxyBird\App\PageResource;
 
-BoxyBird\App\Twig::render('page.twig', [
+Twig::render('page.twig', [
     'page' => PageResource::item($wp_query)
 ]);

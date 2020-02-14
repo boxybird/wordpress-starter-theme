@@ -1,5 +1,6 @@
 <?php
 
+use BoxyBird\App\Twig;
 use BoxyBird\App\PostResource;
 
 $custom_query = new WP_Query([
@@ -7,7 +8,7 @@ $custom_query = new WP_Query([
     'posts_per_page' => 5,
 ]);
 
-BoxyBird\App\Twig::render('index.twig', [
+Twig::render('index.twig', [
     'posts'        => PostResource::collection($wp_query), // global $wp_query
     'custom_posts' => PostResource::collection($custom_query),
 ]);
