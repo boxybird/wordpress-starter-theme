@@ -35,10 +35,6 @@ class Twig
         }
 
         $twig->registerUndefinedFunctionCallback(function ($name) {
-            if (strpos($name, 'the_') === 0) {
-                throw new Exception('Cannot use ' . $name . '(), use get_the' . substr($name, 3) . '() (if exists) instead.', 1);
-            }
-
             if (function_exists($name)) {
                 return new Twig_SimpleFunction($name, $name);
             }
