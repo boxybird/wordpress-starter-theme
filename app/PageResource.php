@@ -15,7 +15,7 @@ class PageResource extends Resource
             return [
                 'id'           => $post->ID,
                 'title'        => get_the_title($post->ID),
-                'content'      => get_the_content(null, false, $post->ID),
+                'content'      => apply_filters('the_content', get_the_content(null, false, $post->ID)),
                 'link'         => get_the_permalink($post->ID),
                 'excerpt'      => wp_trim_words(get_the_excerpt($post->ID), 25),
                 'excerpt_long' => wp_trim_words(get_the_excerpt($post->ID), 50),
