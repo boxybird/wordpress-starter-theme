@@ -30,11 +30,11 @@ class Setup
 
     public static function checkDependencies()
     {
-        if (!is_plugin_active('advanced-custom-fields/acf.php')) {
+        if (!is_plugin_active('advanced-custom-fields/acf.php') && !is_plugin_active('advanced-custom-fields-pro/acf.php')) {
             add_action('admin_notices', function () {
                 ?>
                     <div class="notice notice-error">
-                        <p>Advanced Custom Fields plugin must be active to use this theme.</p>
+                        <p>Advanced Custom Fields/Advanced Custom Fields PRO plugin must be active to use this theme.</p>
                     </div>
                 <?php
             });
