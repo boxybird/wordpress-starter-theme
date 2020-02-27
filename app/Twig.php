@@ -34,12 +34,13 @@ class Twig
             $twig->addGlobal($key, $value);
         }
 
+        // Register functions for use in .twig files
         $twig->registerUndefinedFunctionCallback(function ($name) {
-            if (function_exists($name)) {
-                return new Twig_SimpleFunction($name, $name);
+            if (!function_exists($name)) {
+                return false;
             }
 
-            return false;
+            return new Twig_SimpleFunction($name, $name);
         });
 
         return $twig;
