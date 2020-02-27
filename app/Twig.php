@@ -19,11 +19,11 @@ class Twig
     {
         $loader = new FilesystemLoader(get_template_directory() . '/resources/views');
 
+        $debug = defined('WP_DEBUG') && WP_DEBUG === true ? true : false;
+
         $twig = new Environment($loader, [
-            'cache' => defined('WP_DEBUG') && WP_DEBUG === true
-                ? false
-                : get_template_directory() . '/resources/cache',
-            'debug' => defined('WP_DEBUG') && WP_DEBUG === true ? true : false
+            'cache' => $debug ? false : get_template_directory() . '/resources/cache',
+            'debug' => $debug,
         ]);
 
         $twig->addExtension(new DebugExtension());
