@@ -1,7 +1,10 @@
 <?php
 
+namespace BoxyBird\App;
+
 // Init setup
-BoxyBird\App\Setup::init();
-BoxyBird\App\Api::init();
-BoxyBird\App\Ajax::init();
-BoxyBird\App\Acf\Acf::init();
+Setup::init();
+Acf\Acf::init();
+Api\Example::init();
+Ajax\Example::init();
+Acf\Blocks\Example::init();
