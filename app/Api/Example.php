@@ -21,7 +21,7 @@ class Example
         ]);
     }
 
-    public function getExampleCallback(WP_REST_Request $request)
+    public static function getExampleCallback(WP_REST_Request $request)
     {
         if ('dog' === 'cat') {
             return new WP_Error('not_equal', 'Dogs Are Not Cats', ['status' => 422]);
