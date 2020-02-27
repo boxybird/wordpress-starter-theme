@@ -1,6 +1,6 @@
 <?php
 
-namespace BoxyBird\App;
+namespace BoxyBird\App\Resources;
 
 use WP_Query;
 

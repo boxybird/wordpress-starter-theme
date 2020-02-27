@@ -1,27 +1,27 @@
 <?php
 
-namespace BoxyBird\App;
+namespace BoxyBird\App\Api;
 
 use WP_Error;
 use WP_REST_Request;
 use WP_REST_Response;
 
-class Api
+class Example
 {
     public static function init()
     {
-        add_action('rest_api_init', [Api::class, 'getQuote']);
+        add_action('rest_api_init', [Example::class, 'getExample']);
     }
 
-    public static function getQuote()
+    public static function getExample()
     {
-        register_rest_route('boxybird/v1', '/quote', [
+        register_rest_route('boxybird/v1', '/example', [
             'methods'  => 'GET',
-            'callback' => [Api::class, 'getQuoteCallback'],
+            'callback' => [Example::class, 'getExampleCallback'],
         ]);
     }
 
-    public function getQuoteCallback(WP_REST_Request $request)
+    public function getExampleCallback(WP_REST_Request $request)
     {
         if ('dog' === 'cat') {
             return new WP_Error('not_equal', 'Dogs Are Not Cats', ['status' => 422]);

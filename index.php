@@ -1,7 +1,7 @@
 <?php
 
 use BoxyBird\App\Twig;
-use BoxyBird\App\PostResource;
+use BoxyBird\App\Resources\PostResource;
 
 $custom_query = new WP_Query([
     'post_type'      => 'page',
