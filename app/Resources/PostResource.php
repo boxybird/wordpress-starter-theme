@@ -29,6 +29,6 @@ class PostResource extends Resource
                     ]
                 ],
             ];
-        }, $query->posts ?? []);
+        }, $query->posts);
     }
 }

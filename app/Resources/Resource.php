@@ -13,6 +13,6 @@ abstract class Resource
 
     public static function item(WP_Query $query): array
     {
-        return static::toArray($query)[0] ?? [];
+        return static::toArray($query)[0];
     }
 }
