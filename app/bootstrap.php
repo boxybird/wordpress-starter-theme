@@ -8,3 +8,4 @@ Acf\Acf::init();
 Api\Example::init();
 Ajax\Example::init();
 Acf\Blocks\Example::init();
+Customizer\SiteBackgroundColor::init();

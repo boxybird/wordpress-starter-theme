@@ -6,6 +6,12 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         {% block seo %}{% endblock %}
         {{ wp_head() }}
+
+        <style>
+            body {
+                background-color: {{ theme.site_bg_color ~'!important' }};
+            };
+        </style>
     </head>
     <body {{ body_class() }}>
 

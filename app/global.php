@@ -3,7 +3,7 @@
 /**
  * Add global variables
  *
- * note: functions must not contain 
+ * note: functions must not contain
  * echo as it will be rendered here
  *
  * Ex: use "get_bloginfo('name')" vs "bloginfo('name')"
@@ -17,6 +17,10 @@ return [
     'site' => [
         'name'        => get_bloginfo('name'),
         'description' => get_bloginfo('description'),
+    ],
+
+    'theme' => [
+        'site_bg_color' => get_theme_mod('site_bg_color_setting', '#ffffff'),
     ],
 
     'menu' => [
