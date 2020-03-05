@@ -41,6 +41,6 @@ class SiteBackgroundColor
 
     public static function siteBgColorSettingCallback($value)
     {
-        return esc_html($value);
+        return sanitize_hex_color($value);
     }
 }
