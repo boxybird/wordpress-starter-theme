@@ -15,8 +15,10 @@ return [
     ],
 
     'site' => [
-        'name'        => get_bloginfo('name'),
-        'description' => get_bloginfo('description'),
+        'name'                => get_bloginfo('name'),
+        'charset'             => get_bloginfo('charset'),
+        'description'         => get_bloginfo('description'),
+        'language_attributes' => get_language_attributes(),
     ],
 
     'theme' => [

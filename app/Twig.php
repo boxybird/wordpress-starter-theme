@@ -35,9 +35,15 @@ class Twig
         }
 
         // Register functions for use in .twig files
-        $twig->registerUndefinedFunctionCallback(function ($name) {
+        $function_whitelist = require_once __DIR__ . '/functions-whitelist.php';
+        $twig->registerUndefinedFunctionCallback(function ($name) use ($function_whitelist) {
             if (!function_exists($name)) {
                 return false;
+            }
+
+            // User functions whitelist to use in Twig
+            if (!in_array($name, $function_whitelist)) {
+                throw new Exception("Function: '{$name}()' not found in functions-whitelist.php");
             }
 
             return new Twig_SimpleFunction($name, $name);
