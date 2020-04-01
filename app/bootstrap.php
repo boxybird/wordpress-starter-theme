@@ -10,7 +10,7 @@ use BoxyBird\App\Customizer\SiteBackgroundColor;
 use BoxyBird\App\Acf\Blocks\Example as BlockExample;
 
 // Init filp/whoops
-if (WP_DEBUG) {
+if (WP_DEBUG && WP_DEBUG_DISPLAY) {
     $whoops = new Run;
     $whoops->pushHandler(new PrettyPageHandler);
     $whoops->register();
