@@ -5,6 +5,7 @@
 ### What's Included / Benefits
 
 - Vue JS
+- Vuex
 - MVC Spirit
 - Laravel Mix
 - Tailwind CSS
